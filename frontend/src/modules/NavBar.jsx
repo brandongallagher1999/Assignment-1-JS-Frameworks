@@ -11,7 +11,7 @@ function NavBar()
 
     return (
         <Fragment>
-            <nav class="navbar" style={{ fontSize: "20px", margin: "45px"}}>
+            <nav class="navbar" style={{ fontSize: "20px", margin: "45px", backgroundColor: "rgb(230, 255, 255)"}}>
                 <div class="navbar-brand">
                     <a class="navbar-item">
                         <span style={{fontFamily: "Brush Script MT"}}>
