@@ -2,6 +2,7 @@ import './css/App.css';
 import React, { useState, useEffect} from 'react';
 import NavBar from "./modules/NavBar";
 import 'bulma/css/bulma.css';
+import Profile from "./modules/Profile";
 
 
 function App() {
@@ -15,11 +16,8 @@ function App() {
 
 
   return (
-    <div className="App">
-      <NavBar>
-      </NavBar>
-    </div>
-  
+    <Profile>
+    </Profile>
   
   );
 }

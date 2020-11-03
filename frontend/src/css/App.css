@@ -1,0 +1,123 @@
+
+
+.projects
+{
+    font-size: 50px;
+    position: relative;
+    left: 70%;
+    top: 75px;
+    font-weight: bold;
+}
+
+.profile-box
+{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 750px;
+    height: auto;
+    margin: auto;
+    top: 100px;
+    position: relative;
+    border: 1px solid grey;
+    border-bottom: 0;
+    border-radius: 10px;
+}
+.profile-inner-box
+{
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.profile-inner-box-border
+{
+    width: 100%;
+    height: auto;
+    top: 100px;
+    border: 1px solid grey;
+    opacity: 0.75;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+}
+
+.profile-inner-box-border-flex
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    top: 100px;
+    border: 1px solid grey;
+    opacity: 0.75;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+}
+
+.profile-image
+{
+    margin: auto;
+    display: block;
+	border-radius: 50%;
+	width: 220px;
+	height: 220px;
+	z-index: 86;
+}
+.profile-name
+{
+    font-size: 25px;
+    left: 35%;
+    top: 2%;
+    position: relative;
+    color: #423d3c;
+    font-weight: bold;
+}
+
+.profile-position
+{
+    color: grey;
+    position: relative;
+    font-size: 23px;
+    left: 45%;
+    top: 1.5%;
+    display: block;
+}
+
+.profile-description
+{
+    font-size: 20px;
+    color: black;
+    margin: 25px;
+}
+
+.profile-description-middle
+{
+    font-size: 20px;
+    color: black;
+    left: 30%;
+    width: auto;
+    position: relative;
+}
+
+.logo
+{
+    margin-top: 2%;
+    margin-left: 15px;
+    position: relative;
+    width: 75px;
+    height: 75px;
+}
+
+.link
+{
+    width: 120px;
+    font-size: 25px;
+    height: auto;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px;
+    border: 1px solid grey;
+}
