@@ -34,4 +34,4 @@ docker-compose up
   
 ## Opening Web App
 1. Go into any browser, preferably Google Chrome
-2. In the URL bar, type "localhost:3000"
+2. In the URL bar, type "localhost:3000/brandon"
