@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:10.23-alpine
 
 COPY . .
 
