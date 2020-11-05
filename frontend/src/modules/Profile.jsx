@@ -1,46 +1,69 @@
-import React, { useState, useEffect, Fragment} from 'react';
+import React, { useState, useEffect} from 'react';
+import { useParams} from "react-router-dom";
 
+const axios = require("axios");
 
-
-function Profile()
+function Profile(props)
 {
+    const [name, setName] = useState("");
+    const [imgLink, setImg] = useState("");
+    const [position, setPosition] = useState("");
+    const [desc, setDesc] = useState("");
+    const [interests, setInterests] = useState("");
+    const {reqName} = useParams();
+    const [github, setGithub] = useState("");
+    const [linkedIn, setLinkedin] = useState("");
+    const [imgHash, setImgHash] = useState("");
+
+    useEffect(() => {
+        
+        // Set state from our backend
+        axios.get(`http://localhost:3001/${reqName}`)
+        .then((res) => {
+            setName(res.data.name);
+            setPosition(res.data.position);
+            setDesc(res.data.desc);
+            setInterests(res.data.interests);
+            setGithub(res.data.github);
+            setLinkedin(res.data.linkedIn);
+            setImg(res.data.imgLink);
+            console.log(res.data);
+            setImgHash(Date.now());
+        });
+        
+
+    }, []);
 
     return(
-        <div class="profile-box">
+        <div className="profile-box">
             
             <div className="profile-inner-box">
-                <img src="https://steamcdn-a.akamaihd.net/steam/apps/205100/header.jpg?t=1541465639" class="profile-image">
+                <img src={`${imgLink}?${imgHash}`} className="profile-image">
                 </img>
             </div>
             <div className="profile-inner-box">
-                <div className="profile-name"><p>Brandon Gallagher</p></div>
-                <div className="profile-position"><p>Student</p></div>
+                <div className="profile-name"><p> {name}</p></div>
+                <div className="profile-position"><p>{position}</p></div>
             </div>
             
             <div className="profile-inner-box-border">
-                <div className="profile-description"><p>Some descrption blalalala</p></div>
+                <div className="profile-description"><p>{desc}</p></div>
             </div>
 
             <div className="profile-inner-box-border">
-                <div className="profile-description"><p>Interests: </p></div>
+                <div className="profile-description"><p>Interests: {interests}</p></div>
             </div>
 
             <div className="profile-inner-box-border">
                 <div className="profile-description-middle">
-                    <a href><img className="logo" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"></img></a>
-                    <a href><img className="logo" src="https://image.flaticon.com/icons/png/512/174/174857.png"></img></a>
-                    <a href><img className="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Gmail_Icon.svg/1024px-Gmail_Icon.svg.png"></img></a>
+                    <a href={github}><img className="logo" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"></img></a>
+                    <a href={linkedIn}><img className="logo" src="https://image.flaticon.com/icons/png/512/174/174857.png"></img></a>
                 </div>
 
             </div>
 
             <div className="profile-inner-box-border-flex">
-                <div className="link">
-                    <p>Projects</p>
-                </div>
-                <div className="link">
-                    <p>Resume</p>
-                </div>
+                <button className="button" style={{fontSize : "25px", margin: "20px"}}> Resume </button>
             </div>
 
             

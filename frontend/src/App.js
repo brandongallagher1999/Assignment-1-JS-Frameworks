@@ -3,21 +3,20 @@ import React, { useState, useEffect} from 'react';
 import NavBar from "./modules/NavBar";
 import 'bulma/css/bulma.css';
 import Profile from "./modules/Profile";
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 
 function App() {
-  
-  const [name, setName] = useState("");
-
-  useEffect(() => {
-    setName("Brandon");
-  }, []);
 
 
 
   return (
-    <Profile>
-    </Profile>
+
+    <BrowserRouter>
+      <Switch>
+        <Route path="/:reqName" component={Profile}/>
+      </Switch>
+    </BrowserRouter>
   
   );
 }
