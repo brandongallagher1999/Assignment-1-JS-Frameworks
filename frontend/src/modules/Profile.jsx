@@ -2,15 +2,28 @@ import React, { useState, useEffect} from 'react';
 import { useParams} from "react-router-dom";
 
 const axios = require("axios");
+const fileDownload = require("js-file-download");
+
 
 function Profile(props)
 {
+
+    function downloadFile ()
+    {
+
+        axios.get(`http://localhost:3001/download/${reqName}`)
+        .then((res) => {
+            //console.log(res.data);
+            fileDownload(res.data, `${name} Resume.pdf`);
+        });
+    }
+
     const [name, setName] = useState("");
     const [imgLink, setImg] = useState("");
     const [position, setPosition] = useState("");
     const [desc, setDesc] = useState("");
     const [interests, setInterests] = useState("");
-    const {reqName} = useParams();
+    const {reqName} = useParams(); //path parameter
     const [github, setGithub] = useState("");
     const [linkedIn, setLinkedin] = useState("");
     const [imgHash, setImgHash] = useState("");
@@ -63,7 +76,7 @@ function Profile(props)
             </div>
 
             <div className="profile-inner-box-border-flex">
-                <button className="button" style={{fontSize : "25px", margin: "20px"}}> Resume </button>
+                <button className="button" style={{fontSize : "25px", margin: "20px"}} onClick = { downloadFile}> Resume </button>
             </div>
 
             

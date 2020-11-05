@@ -5,8 +5,10 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require("cors");
 
-var indexRouter = require('./routes/index');
+// ROUTERS
+//var indexRouter = require('./routes/index');
 var nameRouter = require("./routes/user");
+var downloadRouter = require("./routes/download");
 
 
 var app = express();
@@ -22,9 +24,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
+
 // ROUTES
 
 app.get("/:reqName", nameRouter);
+app.get("/download/:name", downloadRouter)
 
 
 
